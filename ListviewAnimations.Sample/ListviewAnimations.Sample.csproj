@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D61A068E-A628-4BD4-B864-A144ECC20C63}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ListviewAnimations.Sample</RootNamespace>
+    <AssemblyName>ListviewAnimations.Sample</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <DevInstrumentationEnabled>True</DevInstrumentationEnabled>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="appearance\AppearanceExamplesActivity.cs" />
+    <Compile Include="BaseActivity.cs" />
+    <Content Include="googlecards\GoogleCardsActivity.java" />
+    <Compile Include="googlecards\GoogleCardsAdapter.cs" />
+    <Compile Include="gridview\GridViewActivity.cs" />
+    <Compile Include="gridview\GridViewAdapter.cs" />
+    <Content Include="IInAppBillingService.java" />
+    <Compile Include="itemmanipulation\DynamicListViewActivity.cs" />
+    <Compile Include="itemmanipulation\expandablelistitems\ExpandableListItemActivity.cs" />
+    <Compile Include="itemmanipulation\expandablelistitems\MyExpandableListItemAdapter.cs" />
+    <Compile Include="itemmanipulation\ItemManipulationsExamplesActivity.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="MyListActivity.cs" />
+    <Compile Include="MyListAdapter.cs" />
+    <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable\card_background_white.9.png" />
+    <AndroidResource Include="Resources\drawable\img_nature1.jpg" />
+    <AndroidResource Include="Resources\drawable\img_nature2.jpg" />
+    <AndroidResource Include="Resources\drawable\img_nature3.jpg" />
+    <AndroidResource Include="Resources\drawable\img_nature4.jpg" />
+    <AndroidResource Include="Resources\drawable\img_nature5.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_beer.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_github.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_undo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_beer.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_github.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_undo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_beer.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_github.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_undo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ab_dropdown.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_beer.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_github.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_undo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_main_appearance.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_main_googlecards.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_main_gridview.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_main_itemmanipulation.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_main_stickylistheaders.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_manipulation_animateaddition.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_manipulation_expand.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\img_manipulation_swipetodismiss.png" />
+    <AndroidResource Include="Resources\layout\activity_dynamiclistview.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_dynamiclistview_header.xml" />
+    <AndroidResource Include="Resources\layout\activity_examples_itemmanipulations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_expandablelistitem_card.xml" />
+    <AndroidResource Include="Resources\layout\activity_googlecards.xml" />
+    <AndroidResource Include="Resources\layout\activity_googlecards_card.xml" />
+    <AndroidResource Include="Resources\layout\activity_gridview.xml" />
+    <AndroidResource Include="Resources\layout\activity_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_mylist.xml" />
+    <AndroidResource Include="Resources\layout\activity_stickylistheaders.xml" />
+    <AndroidResource Include="Resources\layout\list_header.xml" />
+    <AndroidResource Include="Resources\layout\list_row.xml" />
+    <AndroidResource Include="Resources\layout\list_row_draganddrop.xml" />
+    <AndroidResource Include="Resources\layout\list_row_dynamiclistview.xml" />
+    <AndroidResource Include="Resources\layout\undo_row.xml" />
+    <AndroidResource Include="Resources\menu\menu_expandablelistitem.xml" />
+    <AndroidResource Include="Resources\menu\menu_main.xml" />
+    <AndroidResource Include="Resources\values\arrays.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values-v19\dimens.xml" />
+    <Content Include="StickyListHeadersActivity.java" />
+    <Compile Include="util\BitmapCache.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-ldpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ListviewAnimations.Core\ListviewAnimations.Core.csproj">
+      <Project>{1cd53e9c-2472-4bac-8d16-3dd6ca3aede2}</Project>
+      <Name>ListviewAnimations.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ListviewAnimations.Manipulation\ListviewAnimations.Manipulation.csproj">
+      <Project>{5178376d-c7b3-4fd5-bdc4-6e4847ad63c0}</Project>
+      <Name>ListviewAnimations.Manipulation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

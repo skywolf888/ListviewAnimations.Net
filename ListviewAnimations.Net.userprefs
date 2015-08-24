@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="ListviewAnimations.Core/ListviewAnimations.Core.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.4.4" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ListviewAnimations.Manipulation/Com/Nhaarman/ListviewAnimations/ItemManiPulation/dragdrop/DragAndDropHandler.cs">
+    <Files>
+      <File FileName="ListviewAnimations.Manipulation/Com/Nhaarman/ListviewAnimations/ItemManiPulation/dragdrop/DragAndDropHandler.cs" Line="4" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
