@@ -50,9 +50,10 @@ using Android.Widget;
 using Com.Nhaarman.ListviewAnimations.Util;
 using System;
 using System.Collections.Generic;
+
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.expandablelistitem
 {
-    public abstract class ExpandableListItemAdapter<T> : ArrayAdapter<T>, ListViewWrapperSetter
+    public abstract class ExpandableListItemAdapter<T> : ArrayAdapter<T>, IListViewWrapperSetter
     {
 
         private static readonly int DEFAULTTITLEPARENTRESID = 10000;
@@ -70,7 +71,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.expandablelistitem
         private int mLimit;
 
         //@Nullable
-        private ListViewWrapper mListViewWrapper;
+        private IListViewWrapper mListViewWrapper;
 
         //@Nullable
         private ExpandCollapseListener mExpandCollapseListener;
@@ -131,7 +132,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.expandablelistitem
 
         //@SuppressWarnings("NullableProblems")
         //@Override
-        public   void setListViewWrapper(ListViewWrapper listViewWrapper)
+        public   void setListViewWrapper(IListViewWrapper listViewWrapper)
         {
             mListViewWrapper = listViewWrapper;
         }
@@ -608,11 +609,11 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.expandablelistitem
             int listViewHeight  ;
             int listViewBottomPadding  ;
             View v ;
-            private ListViewWrapper mlist;
+            private IListViewWrapper mlist;
             private View mview;
 
 
-            public animateExpandingInnerClass(View view,ListViewWrapper listViewWrapper)
+            public animateExpandingInnerClass(View view,IListViewWrapper listViewWrapper)
             {
                 mlist = listViewWrapper;
                 mview = view;
@@ -644,7 +645,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.expandablelistitem
                 int origHeight = view.Height;
 
                 ValueAnimator animator = createHeightAnimator(view, origHeight, 0);
-                //throw new NotImplementedException();
+                 
                 //animator.addListener(
                 //        new AnimatorListenerAdapter() {
 
@@ -659,7 +660,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.expandablelistitem
                 animator.Start();
             }
 
-            public static void animateExpanding(View view, ListViewWrapper listViewWrapper)
+            public static void animateExpanding(View view, IListViewWrapper listViewWrapper)
             {
                 view.Visibility = ViewStates.Visible;
 
@@ -669,7 +670,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.expandablelistitem
                 view.Measure(widthSpec, heightSpec);
 
                 ValueAnimator animator = createHeightAnimator(view, 0, view.MeasuredHeight);
-                //throw new NotImplementedException();
+                
                 //animator.addUpdateListener(
                 //        new ValueAnimator.AnimatorUpdateListener() {
                 //            int listViewHeight = listViewWrapper.getListView().getHeight();
@@ -696,7 +697,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.expandablelistitem
             public static ValueAnimator createHeightAnimator(View view, int start, int end)
             {
                 ValueAnimator animator = ValueAnimator.OfInt(start, end);
-                //throw new NotImplementedException();
+                 
                 //animator.addUpdateListener(
                 //        new ValueAnimator.AnimatorUpdateListener() {
 

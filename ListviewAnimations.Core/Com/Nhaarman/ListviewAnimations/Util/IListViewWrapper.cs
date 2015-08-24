@@ -25,7 +25,7 @@ using Android.Views;
 using Android.Widget;
 namespace Com.Nhaarman.ListviewAnimations.Util
 {
-    public interface ListViewWrapper
+    public interface IListViewWrapper
     {
 
         //@NonNull

@@ -41,7 +41,7 @@ using Java.Lang;
 using System.Collections.Generic;
 namespace Com.Nhaarman.ListviewAnimations
 {
-    public abstract class ArrayAdapter<T> : BaseAdapter, Swappable, Insertable
+    public abstract class ArrayAdapter<T> : BaseAdapter, ISwappable, IInsertable
     {
 
         //@NonNull
@@ -203,8 +203,7 @@ namespace Com.Nhaarman.ListviewAnimations
 
         //@Override
         public void swapItems(int positionOne, int positionTwo)
-        {
-            //throw new NotImplementedException();
+        {             
             T firstitem = mItems[positionOne];
             mItems[positionOne] = mItems[positionTwo];
             //T firstItem = mItems.set(positionOne, getItem(positionTwo));

@@ -34,20 +34,22 @@ using Android.Views;
 using Android.Widget;
 namespace Com.Nhaarman.ListviewAnimations.Appearance.Simple
 {
-//@SuppressWarnings("UnusedDeclaration")
-public class SwingLeftInAnimationAdapter : SingleAnimationAdapter {
-
-    private static readonly string TRANSLATION_X = "translationX";
-
-    public SwingLeftInAnimationAdapter(BaseAdapter baseAdapter) 
-		:base(baseAdapter)
+    //@SuppressWarnings("UnusedDeclaration")
+    public class SwingLeftInAnimationAdapter : SingleAnimationAdapter
     {
-        //super(baseAdapter);
-    }
 
-   
-    protected override Animator getAnimator(ViewGroup parent,   View view) {
-        return ObjectAnimator.OfFloat(view, TRANSLATION_X, 0 - parent.Width, 0);
+        private static readonly string TRANSLATION_X = "translationX";
+
+        public SwingLeftInAnimationAdapter(BaseAdapter baseAdapter)
+            : base(baseAdapter)
+        {
+            //super(baseAdapter);
+        }
+
+
+        protected override Animator getAnimator(ViewGroup parent, View view)
+        {
+            return ObjectAnimator.OfFloat(view, TRANSLATION_X, 0 - parent.Width, 0);
+        }
     }
-}
 }

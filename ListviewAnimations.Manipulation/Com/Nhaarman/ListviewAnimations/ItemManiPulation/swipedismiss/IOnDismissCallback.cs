@@ -27,7 +27,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
     /**
      * A callback interface used to inform its client about a successful dismissal of one or more list item positions.
      */
-    public interface OnDismissCallback
+    public interface IOnDismissCallback
     {
 
         /**

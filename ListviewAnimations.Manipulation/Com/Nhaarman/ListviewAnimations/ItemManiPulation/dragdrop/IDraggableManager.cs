@@ -26,7 +26,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
     /**
      * An interface to be used for determining whether the user should be able to drag a {@code View}.
      */
-    public interface DraggableManager
+    public interface IDraggableManager
     {
 
         /**

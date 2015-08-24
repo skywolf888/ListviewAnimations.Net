@@ -41,6 +41,7 @@ using Android.Views;
 using Com.Nhaarman.ListviewAnimations.Util;
 using Java.Lang;
 using System.Collections.Generic;
+
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
 {
     public class SwipeDismissTouchListener : SwipeTouchListener
@@ -50,7 +51,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
          * The callback which gets notified of dismissed items.
          */
         //@NonNull
-        private OnDismissCallback mCallback;
+        private IOnDismissCallback mCallback;
 
         /**
          * The duration of the dismiss animation
@@ -87,7 +88,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
          * @param callback    The callback to trigger when the user has indicated that he
          */
         //@SuppressWarnings("UnnecessaryFullyQualifiedName")
-        public SwipeDismissTouchListener(ListViewWrapper listViewWrapper, OnDismissCallback callback)
+        public SwipeDismissTouchListener(IListViewWrapper listViewWrapper, IOnDismissCallback callback)
             : base(listViewWrapper)
         {
 

@@ -7,7 +7,7 @@ using Android.Views;
 
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation
 {
-    public interface TouchEventHandler
+    public interface ITouchEventHandler
     {
 
         bool onTouchEvent(MotionEvent mevent);

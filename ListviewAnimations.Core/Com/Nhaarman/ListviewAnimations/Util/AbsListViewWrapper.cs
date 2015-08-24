@@ -16,82 +16,96 @@
 
 //package com.nhaarman.listviewanimations.util;
 
-using Android.Views;
+
 //import android.support.annotation.NonNull;
 //import android.support.annotation.Nullable;
 //import android.view.View;
 //import android.widget.AbsListView;
 //import android.widget.ListAdapter;
 //import android.widget.ListView;
+using Android.Views;
 using Android.Widget;
+
 namespace Com.Nhaarman.ListviewAnimations.Util
 {
-public class AbsListViewWrapper : ListViewWrapper {
-
-    //@NonNull
-    private AbsListView mAbsListView;
-
-    public AbsListViewWrapper(AbsListView absListView) {
-        mAbsListView = absListView;
-    }
-
-    //@Override
-    //@NonNull
-    public ViewGroup getListView() {
-        return mAbsListView;
-    }
-
-    //@Nullable
-    //@Override
-    public View getChildAt(int index)
+    public class AbsListViewWrapper : IListViewWrapper
     {
-        return mAbsListView.GetChildAt(index);
-    }
 
-    //@Override
-    public int getFirstVisiblePosition() {
-        return mAbsListView.FirstVisiblePosition;
-    }
+        //@NonNull
+        private AbsListView mAbsListView;
 
-
-    //@Override
-    public int getLastVisiblePosition() {
-        return mAbsListView.LastVisiblePosition;
-    }
-
-    //@Override
-    public int getCount() {
-        return mAbsListView.Count;
-    }
-
-    //@Override
-    public int getChildCount() {
-        return mAbsListView.ChildCount;
-    }
-
-    //@Override
-    public int getHeaderViewsCount() {
-        int result = 0;
-        if (mAbsListView is ListView) {
-            result = ((ListView) mAbsListView).HeaderViewsCount;
+        public AbsListViewWrapper(AbsListView absListView)
+        {
+            mAbsListView = absListView;
         }
-        return result;
-    }
 
-    //@Override
-    public int getPositionForView(View view) {
-        return mAbsListView.GetPositionForView(view);
-    }
+        //@Override
+        //@NonNull
+        public ViewGroup getListView()
+        {
+            return mAbsListView;
+        }
 
-    //@Override
-    public IListAdapter getAdapter() {
-        return mAbsListView.Adapter;
-    }
+        //@Nullable
+        //@Override
+        public View getChildAt(int index)
+        {
+            return mAbsListView.GetChildAt(index);
+        }
 
-    //@Override
-    public void smoothScrollBy(int distance,  int duration) {
-        mAbsListView.SmoothScrollBy(distance, duration);
-    }
+        //@Override
+        public int getFirstVisiblePosition()
+        {
+            return mAbsListView.FirstVisiblePosition;
+        }
 
-}
+
+        //@Override
+        public int getLastVisiblePosition()
+        {
+            return mAbsListView.LastVisiblePosition;
+        }
+
+        //@Override
+        public int getCount()
+        {
+            return mAbsListView.Count;
+        }
+
+        //@Override
+        public int getChildCount()
+        {
+            return mAbsListView.ChildCount;
+        }
+
+        //@Override
+        public int getHeaderViewsCount()
+        {
+            int result = 0;
+            if (mAbsListView is ListView)
+            {
+                result = ((ListView)mAbsListView).HeaderViewsCount;
+            }
+            return result;
+        }
+
+        //@Override
+        public int getPositionForView(View view)
+        {
+            return mAbsListView.GetPositionForView(view);
+        }
+
+        //@Override
+        public IListAdapter getAdapter()
+        {
+            return mAbsListView.Adapter;
+        }
+
+        //@Override
+        public void smoothScrollBy(int distance, int duration)
+        {
+            mAbsListView.SmoothScrollBy(distance, duration);
+        }
+
+    }
 }

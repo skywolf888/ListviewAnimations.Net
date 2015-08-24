@@ -22,7 +22,7 @@
 using Android.Views;
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
 {
-    public class TouchViewDraggableManager : DraggableManager
+    public class TouchViewDraggableManager : IDraggableManager
     {
 
         //@IdRes

@@ -32,6 +32,7 @@
 using Android.Animation;
 using Android.Views;
 using Android.Widget;
+
 namespace Com.Nhaarman.ListviewAnimations.Appearance.Simple
 {
     public class SwingRightInAnimationAdapter : SingleAnimationAdapter

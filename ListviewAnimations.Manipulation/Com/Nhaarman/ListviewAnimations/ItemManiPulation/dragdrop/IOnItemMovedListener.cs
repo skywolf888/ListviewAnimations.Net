@@ -22,7 +22,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
     /**
      * An interface which provides a callback that is called when an item has moved using the {@link com.nhaarman.listviewanimations.itemmanipulation.dragdrop.rewrite.DynamicListView}.
      */
-    public interface OnItemMovedListener
+    public interface IOnItemMovedListener
     {
 
         /**

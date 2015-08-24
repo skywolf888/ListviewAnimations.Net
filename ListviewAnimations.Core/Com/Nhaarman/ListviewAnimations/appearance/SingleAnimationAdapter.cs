@@ -33,29 +33,31 @@ using Android.Views;
 using Android.Widget;
 namespace Com.Nhaarman.ListviewAnimations.Appearance
 {
-public abstract class SingleAnimationAdapter : AnimationAdapter {
-
-    protected SingleAnimationAdapter(BaseAdapter baseAdapter) 
-		:base(baseAdapter)
+    public abstract class SingleAnimationAdapter : AnimationAdapter
     {
-        //super(baseAdapter);
+
+        protected SingleAnimationAdapter(BaseAdapter baseAdapter)
+            : base(baseAdapter)
+        {
+            //super(baseAdapter);
+        }
+
+
+        public override Animator[] getAnimators(ViewGroup parent, View view)
+        {
+            Animator animator = getAnimator(parent, view);
+            return new Animator[] { animator };
+        }
+
+        /**
+         * Get the {@link Animator} to apply to the {@link View}.
+         *
+         * @param parent the {@link ViewGroup} which is the parent of the View.
+         * @param view   the View that will be animated, as retrieved by
+         *               {@link #getView(int, View, ViewGroup)}.
+         */
+        //@NonNull
+        protected abstract Animator getAnimator(ViewGroup parent, View view);
+
     }
-
-        
-    public override Animator[] getAnimators(ViewGroup parent,  View view) {
-        Animator animator = getAnimator(parent, view);
-        return new Animator[]{animator};
-    }
-
-    /**
-     * Get the {@link Animator} to apply to the {@link View}.
-     *
-     * @param parent the {@link ViewGroup} which is the parent of the View.
-     * @param view   the View that will be animated, as retrieved by
-     *               {@link #getView(int, View, ViewGroup)}.
-     */
-    //@NonNull
-    protected abstract Animator getAnimator(ViewGroup parent, View view);
-
-}
 }

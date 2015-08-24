@@ -76,7 +76,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.Animateaddition
         private static readonly string ALPHA = "alpha";
 
         //@NonNull
-        private Insertable mInsertable;
+        private IInsertable mInsertable;
 
         //@NonNull
         private InsertQueue<T> mInsertQueue;
@@ -98,13 +98,12 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.Animateaddition
             //super(baseAdapter);
 
             BaseAdapter rootAdapter = getRootAdapter();
-            if (!(rootAdapter is Insertable))
+            if (!(rootAdapter is IInsertable))
             {
                 throw new Java.Lang.IllegalArgumentException("BaseAdapter should implement Insertable!");
-            }
-            //throw new NotImplementedException();
+            }             
             //mInsertable = (Insertable<T>) rootAdapter;
-            mInsertable = (Insertable)rootAdapter;
+            mInsertable = (IInsertable)rootAdapter;
             mInsertQueue = new InsertQueue<T>(mInsertable);
         }
 
@@ -113,7 +112,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.Animateaddition
          */
         //@Override
         //@Deprecated
-        public   void setAbsListView(AbsListView absListView)
+        public void setAbsListView(AbsListView absListView)
         {
             if (absListView is ListView)
             {
@@ -202,8 +201,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.Animateaddition
          * @param indexItemPairs the index-item pairs to insert. The first argument of the {@code Pair} is the index, the second argument is the item.
          */
         public void insert(params KeyValuePair<int, T>[] indexItemPairs)
-        {
-            //throw new NotImplementedException();
+        {             
             //insert(indexItemPairs as IEnumerable<int,T>);
 
             insert((IEnumerable<KeyValuePair<int, T>>)indexItemPairs);
@@ -397,7 +395,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.Animateaddition
         /**
          * A class which applies the animated height value to a {@code View}.
          */
-        private class HeightUpdater :Java.Lang.Object, ValueAnimator.IAnimatorUpdateListener
+        private class HeightUpdater : Java.Lang.Object, ValueAnimator.IAnimatorUpdateListener
         {
 
             private View mView;

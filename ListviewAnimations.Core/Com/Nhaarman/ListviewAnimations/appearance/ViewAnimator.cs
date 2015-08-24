@@ -44,6 +44,7 @@ using Android.Views;
 using Android.Widget;
 using Com.Nhaarman.ListviewAnimations.Util;
 using System;
+
 namespace Com.Nhaarman.ListviewAnimations.Appearance
 {
     public class ViewAnimator
@@ -77,7 +78,7 @@ namespace Com.Nhaarman.ListviewAnimations.Appearance
          * The ListViewWrapper containing the ListView implementation.
          */
         //@NonNull
-        private readonly ListViewWrapper mListViewWrapper;
+        private readonly IListViewWrapper mListViewWrapper;
 
         /**
          * The active Animators. Keys are hashcodes of the Views that are animated.
@@ -126,7 +127,7 @@ namespace Com.Nhaarman.ListviewAnimations.Appearance
          * @param listViewWrapper the {@code ListViewWrapper} which wraps the implementation of the ListView used.
          */
         ////@NonNull readonly
-        public ViewAnimator(ListViewWrapper listViewWrapper)
+        public ViewAnimator(IListViewWrapper listViewWrapper)
         {
             mListViewWrapper = listViewWrapper;
             mAnimationStartMillis = -1;
@@ -274,9 +275,7 @@ namespace Com.Nhaarman.ListviewAnimations.Appearance
             if (mAnimationStartMillis == -1)
             {
                 mAnimationStartMillis = SystemClock.UptimeMillis();
-            }
-
-            //throw new NotImplementedException();
+            }           
             //        ViewHelper.setAlpha(view, 0);
 
             view.Alpha = 0;

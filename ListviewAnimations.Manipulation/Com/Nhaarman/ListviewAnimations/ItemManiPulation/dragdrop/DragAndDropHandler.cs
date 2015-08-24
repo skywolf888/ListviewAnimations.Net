@@ -44,7 +44,7 @@ using Com.Nhaarman.ListviewAnimations.Util;
 using System;
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
 {
-    public class DragAndDropHandler : TouchEventHandler
+    public class DragAndDropHandler : ITouchEventHandler
     {
 
         private static readonly int INVALID_ID = -1;
@@ -111,13 +111,13 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
          * The {@link DraggableManager} responsible for deciding if an item can be dragged.
          */
         //@NonNull
-        private DraggableManager mDraggableManager;
+        private IDraggableManager mDraggableManager;
 
         /**
          * The {@link OnItemMovedListener} that is notified of moved items.
          */
         //@Nullable
-        private OnItemMovedListener mOnItemMovedListener;
+        private IOnItemMovedListener mOnItemMovedListener;
 
         /**
          * The raw x coordinate of the down event.
@@ -206,7 +206,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
                 throw new Java.Lang.IllegalStateException("Adapter doesn't have stable ids! Make sure your adapter has stable ids, and override hasStableIds() to return true.");
             }
 
-            if (!(actualAdapter is Swappable))
+            if (!(actualAdapter is ISwappable))
             {
                 throw new Java.Lang.IllegalArgumentException("Adapter should implement Swappable!");
             }
@@ -270,7 +270,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
         /**
          * Sets the {@link DraggableManager} to be used for determining whether an item should be dragged when the user issues a down {@code MotionEvent}.
          */
-        public void setDraggableManager(DraggableManager draggableManager)
+        public void setDraggableManager(IDraggableManager draggableManager)
         {
             mDraggableManager = draggableManager;
         }
@@ -278,7 +278,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
         /**
          * Sets the {@link com.nhaarman.listviewanimations.itemmanipulation.dragdrop.OnItemMovedListener} that is notified when user has dropped a dragging item.
          */
-        public void setOnItemMovedListener(OnItemMovedListener onItemMovedListener)
+        public void setOnItemMovedListener(IOnItemMovedListener onItemMovedListener)
         {
             mOnItemMovedListener = onItemMovedListener;
         }
@@ -487,7 +487,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
             int switchViewPosition = mWrapper.getPositionForView(switchView);
             int mobileViewPosition = mWrapper.getPositionForView(mMobileView);
 
-            ((Swappable)mAdapter).swapItems(switchViewPosition - mWrapper.getHeaderViewsCount(), mobileViewPosition - mWrapper.getHeaderViewsCount());
+            ((ISwappable)mAdapter).swapItems(switchViewPosition - mWrapper.getHeaderViewsCount(), mobileViewPosition - mWrapper.getHeaderViewsCount());
             ((BaseAdapter)mAdapter).NotifyDataSetChanged();
 
             mHoverDrawable.shift(switchView.Height);
@@ -558,7 +558,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
          * By default, nothing is draggable. User should set a {@link com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DraggableManager} manually,
          * or use {@link #startDragging(int)} if they want to start a drag (for example using a long click listener).
          */
-        private class DefaultDraggableManager : DraggableManager
+        private class DefaultDraggableManager : IDraggableManager
         {
 
             //@Override

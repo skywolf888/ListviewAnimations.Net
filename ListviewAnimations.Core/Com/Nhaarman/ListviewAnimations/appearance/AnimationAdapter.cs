@@ -98,7 +98,7 @@ namespace Com.Nhaarman.ListviewAnimations.Appearance
         }
 
         //@Override
-        public override void setListViewWrapper(ListViewWrapper listViewWrapper)
+        public override void setListViewWrapper(IListViewWrapper listViewWrapper)
         {
             base.setListViewWrapper(listViewWrapper);
             mViewAnimator = new ViewAnimator(listViewWrapper);

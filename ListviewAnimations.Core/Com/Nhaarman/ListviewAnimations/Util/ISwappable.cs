@@ -23,7 +23,7 @@
 
 namespace Com.Nhaarman.ListviewAnimations.Util
 {
-    public interface Swappable
+    public interface ISwappable
     {
 
         /**

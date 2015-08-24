@@ -40,13 +40,14 @@
 using Com.Nhaarman.ListviewAnimations.Util;
 using Java.Util.Concurrent.Atomic;
 using System.Collections.Generic;
+
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.Animateaddition
 {
     public class InsertQueue<T>
     {
 
         //@NonNull
-        private Insertable mInsertable;
+        private IInsertable mInsertable;
 
         //@NonNull
         private ICollection<AtomicInteger> mActiveIndexes = new HashSet<AtomicInteger>();
@@ -54,7 +55,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.Animateaddition
         //@NonNull
         private List<KeyValuePair<int, T>> mPendingItemsToInsert = new List<KeyValuePair<int, T>>();
 
-        public InsertQueue(Insertable insertable)
+        public InsertQueue(IInsertable insertable)
         {
             mInsertable = insertable;
         }

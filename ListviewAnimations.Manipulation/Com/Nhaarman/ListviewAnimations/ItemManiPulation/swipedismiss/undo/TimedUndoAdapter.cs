@@ -79,7 +79,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
         //    super(undoAdapter, context, dismissCallback);
         //}
 
-        public  TimedUndoAdapter(BaseAdapter undoAdapter,    Context context,    OnDismissCallback
+        public  TimedUndoAdapter(BaseAdapter undoAdapter,    Context context,    IOnDismissCallback
                 dismissCallback)
             :base(undoAdapter, context, dismissCallback)
         {

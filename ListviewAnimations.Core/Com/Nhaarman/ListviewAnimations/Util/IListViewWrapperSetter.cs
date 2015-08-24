@@ -13,30 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 //package com.nhaarman.listviewanimations.util;
 
 //import android.support.annotation.NonNull;
-
-/**
- * An interface for inserting items at a certain index.
- */
-
-
-
 namespace Com.Nhaarman.ListviewAnimations.Util
 {
-    public interface Insertable
+    public interface IListViewWrapperSetter
     {
 
-        /**
-         * Will be called to insert given {@code item} at given {@code index} in the list.
-         *
-         * @param index the index the new item should be inserted at
-         * @param item  the item to insert
-         */
-
-        //void add(int index, @NonNull T item);
-        void add(int index, object item);
+        void setListViewWrapper(IListViewWrapper listViewWrapper);
     }
 }

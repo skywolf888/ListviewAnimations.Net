@@ -26,10 +26,11 @@
  */
 
 using Android.Views;
+
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
 {
 
-    public interface UndoAdapter
+    public interface IUndoAdapter
     {
 
         /**

@@ -44,7 +44,7 @@ namespace Com.Nhaarman.ListviewAnimations.Util
          * @return the position of the item in the AdapterView represented by given view, or {@link AdapterView#INVALID_POSITION} if the view does not
          * correspond to a list item (or it is not visible).
          */
-        public static int getPositionForView(ListViewWrapper listViewWrapper, View view)
+        public static int getPositionForView(IListViewWrapper listViewWrapper, View view)
         {
             return listViewWrapper.getPositionForView(view) - listViewWrapper.getHeaderViewsCount();
         }
@@ -79,7 +79,7 @@ namespace Com.Nhaarman.ListviewAnimations.Util
          * @return the {@code View}, or {@code null} if the position is not currently visible.
          */
         //@Nullable
-        public static View getViewForPosition(ListViewWrapper listViewWrapper, int position)
+        public static View getViewForPosition(IListViewWrapper listViewWrapper, int position)
         {
             int childCount = listViewWrapper.getChildCount();
             View downView = null;

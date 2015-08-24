@@ -20,7 +20,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
     /**
      * An interface to specify whether certain items can or cannot be dismissed.
      */
-    public interface DismissableManager
+    public interface IDismissableManager
     {
 
         /**

@@ -53,7 +53,7 @@ public class SwipeUndoTouchListener : SwipeDismissTouchListener {
      * The callback which gets notified of events.
      */
     //@NonNull
-    private   UndoCallback mCallback;
+    private   IUndoCallback mCallback;
 
     /**
      * The positions that are in the undo state.
@@ -81,7 +81,7 @@ public class SwipeUndoTouchListener : SwipeDismissTouchListener {
     //@NonNull
     private   ICollection<View> mDismissedViews = new LinkedList<View>();
 
-    public SwipeUndoTouchListener( ListViewWrapper listViewWrapper,   UndoCallback callback) 
+    public SwipeUndoTouchListener( IListViewWrapper listViewWrapper,   IUndoCallback callback) 
 		:base(listViewWrapper, callback)
 
     {

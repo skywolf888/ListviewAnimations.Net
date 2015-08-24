@@ -96,7 +96,7 @@ namespace ListviewAnimations.Sample.itemmanipulation
             listView.OnItemClickListener = new MyOnItemClickListener(listView, this);
         }
 
-        private class MyListAdapter : Com.Nhaarman.ListviewAnimations.ArrayAdapter<string>, UndoAdapter
+        private class MyListAdapter : Com.Nhaarman.ListviewAnimations.ArrayAdapter<string>, IUndoAdapter
         {
 
             private Context mContext;
@@ -185,7 +185,7 @@ namespace ListviewAnimations.Sample.itemmanipulation
             }
         }
 
-        private class MyOnDismissCallback : OnDismissCallback
+        private class MyOnDismissCallback : IOnDismissCallback
         {
 
             private Com.Nhaarman.ListviewAnimations.ArrayAdapter<string> mAdapter;
@@ -223,7 +223,7 @@ namespace ListviewAnimations.Sample.itemmanipulation
             }
         }
 
-        private class MyOnItemMovedListener : Java.Lang.Object, OnItemMovedListener
+        private class MyOnItemMovedListener : Java.Lang.Object, IOnItemMovedListener
         {
 
             private Com.Nhaarman.ListviewAnimations.ArrayAdapter<string> mAdapter;

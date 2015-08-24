@@ -33,6 +33,7 @@ using Android.Content;
 using Android.Views;
 using Android.Widget;
 using System.Collections.Generic;
+
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
 {
 
@@ -40,7 +41,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
      * An implementation of {@link SwipeUndoAdapter} which puts the primary and undo {@link android.view.View} in a {@link android.widget.FrameLayout},
      * and handles the undo click event.
      */
-    public class SimpleSwipeUndoAdapter : SwipeUndoAdapter, UndoCallback
+    public class SimpleSwipeUndoAdapter : SwipeUndoAdapter, IUndoCallback
     {
 
         //@NonNull
@@ -50,13 +51,13 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
          * The {@link com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCallback} that is notified of dismissed items.
          */
         //@NonNull
-        private OnDismissCallback mOnDismissCallback;
+        private IOnDismissCallback mOnDismissCallback;
 
         /**
          * The {@link com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.undo.UndoAdapter} that provides the undo {@link android.view.View}s.
          */
         //@NonNull
-        private UndoAdapter mUndoAdapter;
+        private IUndoAdapter mUndoAdapter;
 
         /**
          * The positions of the items currently in the undo state.
@@ -72,7 +73,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
          * @param dismissCallback the {@link com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCallback} that is notified of dismissed items.
          */
         public SimpleSwipeUndoAdapter(BaseAdapter adapter, Context context,
-                                            OnDismissCallback dismissCallback)
+                                            IOnDismissCallback dismissCallback)
 
             : base(adapter, null)
         {
@@ -87,12 +88,12 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
                 undoAdapter = ((BaseAdapterDecorator)undoAdapter).getDecoratedBaseAdapter();
             }
 
-            if (!(undoAdapter is UndoAdapter))
+            if (!(undoAdapter is IUndoAdapter))
             {
                 throw new Java.Lang.IllegalStateException("BaseAdapter must implement UndoAdapter!");
             }
 
-            mUndoAdapter = (UndoAdapter)undoAdapter;
+            mUndoAdapter = (IUndoAdapter)undoAdapter;
             mContext = context;
             mOnDismissCallback = dismissCallback;
         }
@@ -112,7 +113,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
             View undoView = mUndoAdapter.getUndoView(position, view.getUndoView(), view);
             view.setUndoView(undoView);
 
-            mUndoAdapter.getUndoClickView(undoView).SetOnClickListener(new UndoClickListener(view, position,this));
+            mUndoAdapter.getUndoClickView(undoView).SetOnClickListener(new UndoClickListener(view, position, this));
 
             bool isInUndoState = mUndoPositions.Contains(position);
             primaryView.Visibility = isInUndoState ? ViewStates.Gone : ViewStates.Visible;
@@ -123,7 +124,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
 
         //@Override
         //@NonNull
-        public   View getPrimaryView(View view)
+        public View getPrimaryView(View view)
         {
             View primaryView = ((SwipeUndoView)view).getPrimaryView();
             if (primaryView == null)
@@ -131,12 +132,12 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
                 throw new Java.Lang.IllegalStateException("primaryView == null");
             }
             return primaryView;
-            
+
         }
 
         //@Override
         //@NonNull
-        public   View getUndoView(View view)
+        public View getUndoView(View view)
         {
             View undoView = ((SwipeUndoView)view).getUndoView();
             if (undoView == null)
@@ -147,7 +148,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
         }
 
         //@Override
-        public virtual  void onUndoShown(View view, int position)
+        public virtual void onUndoShown(View view, int position)
         {
             mUndoPositions.Add(position);
         }
@@ -176,7 +177,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
         }
 
 
-        private class UndoClickListener : Java.Lang.Object,View.IOnClickListener
+        private class UndoClickListener : Java.Lang.Object, View.IOnClickListener
         {
 
             //@NonNull
@@ -185,7 +186,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
             private int mPosition;
             private SimpleSwipeUndoAdapter minst;
 
-            public UndoClickListener(SwipeUndoView view, int position,SimpleSwipeUndoAdapter instance)
+            public UndoClickListener(SwipeUndoView view, int position, SimpleSwipeUndoAdapter instance)
             {
                 mView = view;
                 mPosition = position;

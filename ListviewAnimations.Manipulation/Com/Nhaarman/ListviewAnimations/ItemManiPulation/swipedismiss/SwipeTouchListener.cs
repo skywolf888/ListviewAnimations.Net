@@ -40,6 +40,7 @@ using Android.Views;
 using Android.Widget;
 using Com.Nhaarman.ListviewAnimations.Util;
 using System;
+
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
 {
 
@@ -47,7 +48,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
      * An {@link android.view.View.OnTouchListener} that makes the list items in a {@link android.widget.AbsListView} swipeable.
      * Implementations of this class should implement {@link #afterViewFling(android.view.View, int)} to specify what to do after an item has been swiped.
      */
-    public abstract class SwipeTouchListener :Java.Lang.Object, View.IOnTouchListener, TouchEventHandler
+    public abstract class SwipeTouchListener :Java.Lang.Object, View.IOnTouchListener, ITouchEventHandler
     {
 
         /**
@@ -83,7 +84,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
         private long mAnimationTime;
 
         //@NonNull
-        private ListViewWrapper mListViewWrapper;
+        private IListViewWrapper mListViewWrapper;
 
         /**
          * The minimum alpha value of swiped Views.
@@ -161,7 +162,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
          * whether or not a list item can be swiped.
          */
         //@Nullable
-        private DismissableManager mDismissableManager;
+        private IDismissableManager mDismissableManager;
 
         /**
          * The number of active swipe animations.
@@ -177,7 +178,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
          * Constructs a new {@code SwipeTouchListener} for the given {@link android.widget.AbsListView}.
          */
         //@SuppressWarnings("UnnecessaryFullyQualifiedName")
-        protected SwipeTouchListener(ListViewWrapper listViewWrapper)
+        protected SwipeTouchListener(IListViewWrapper listViewWrapper)
         {
             ViewConfiguration vc = ViewConfiguration.Get(listViewWrapper.getListView().Context);
             mSlop = vc.ScaledTouchSlop;
@@ -192,7 +193,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
          *
          * @param dismissableManager {@code null} for no restrictions.
          */
-        public void setDismissableManager(DismissableManager dismissableManager)
+        public void setDismissableManager(IDismissableManager dismissableManager)
         {
             mDismissableManager = dismissableManager;
         }
@@ -254,7 +255,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
         }
 
         //@NonNull
-        public ListViewWrapper getListViewWrapper()
+        public IListViewWrapper getListViewWrapper()
         {
             return mListViewWrapper;
         }
@@ -490,8 +491,9 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
             /* Cancel ListView's touch (un-highlighting the item) */
             if (view != null) {
                 MotionEvent cancelEvent = MotionEvent.Obtain(motionEvent);
-                throw new NotImplementedException();
-                //cancelEvent.Action=MotionEventActions. Cancel | motionEvent.ActionIndex << MotionEventActions.PointerIndexShift);
+
+                int mode = (int)MotionEventActions.Cancel | (motionEvent.ActionIndex << (int)MotionEventActions.PointerIndexShift);
+                cancelEvent.Action=(MotionEventActions)mode;
                 view.OnTouchEvent(cancelEvent);
                 cancelEvent.Recycle();
             }
@@ -499,8 +501,8 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
 
         if (mSwiping) {
             if (mCanDismissCurrent) {
-				mSwipingView.TranslationX=deltaX;
                 //ViewHelper.setTranslationX(mSwipingView, deltaX);
+				mSwipingView.TranslationX=deltaX;                
                 //ViewHelper.setAlpha(mSwipingView, Math.Max(mMinimumAlpha, Math.Min(1, 1 - 2 * Math.Abs(deltaX) / mViewWidth)));
 			    mSwipingView.Alpha=Math.Max(mMinimumAlpha, Math.Min(1, 1 - 2 * Math.Abs(deltaX) / mViewWidth));
 

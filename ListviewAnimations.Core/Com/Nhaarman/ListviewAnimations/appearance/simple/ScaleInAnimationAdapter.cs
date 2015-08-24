@@ -20,12 +20,15 @@
 //import android.view.ViewGroup;
 //import android.widget.BaseAdapter;
 
-using Android.Animation;
-using Android.Views;
+
 //import com.nhaarman.listviewanimations.appearance.AnimationAdapter;
 //import com.nineoldandroids.animation.Animator;
 //import com.nineoldandroids.animation.ObjectAnimator;
 using Android.Widget;
+using Android.Animation;
+using Android.Views;
+
+
 namespace Com.Nhaarman.ListviewAnimations.Appearance.Simple
 {
     public class ScaleInAnimationAdapter : AnimationAdapter

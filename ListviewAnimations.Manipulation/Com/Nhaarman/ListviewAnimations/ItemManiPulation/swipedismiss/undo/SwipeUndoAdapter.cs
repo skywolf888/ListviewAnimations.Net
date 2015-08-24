@@ -29,6 +29,7 @@
 using Android.Views;
 using Android.Widget;
 using Com.Nhaarman.ListviewAnimations.Util;
+
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
 {
 
@@ -48,7 +49,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
          * The {@link UndoCallback} that is used.
          */
         //@NonNull
-        private UndoCallback mUndoCallback;
+        private IUndoCallback mUndoCallback;
 
         /**
          * Create a new {@code SwipeUndoAdapter}, decorating given {@link android.widget.BaseAdapter}.
@@ -56,7 +57,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
          * @param baseAdapter  the {@link android.widget.BaseAdapter} to decorate.
          * @param undoCallback the {@link UndoCallback} that is used.
          */
-        protected SwipeUndoAdapter(BaseAdapter baseAdapter, UndoCallback undoCallback)
+        protected SwipeUndoAdapter(BaseAdapter baseAdapter, IUndoCallback undoCallback)
             : base(baseAdapter)
         {
 
@@ -64,7 +65,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
         }
 
         //@Override
-        public override void setListViewWrapper(ListViewWrapper listViewWrapper)
+        public override void setListViewWrapper(IListViewWrapper listViewWrapper)
         {
 
             base.setListViewWrapper(listViewWrapper);
@@ -81,7 +82,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
          *
          * @param dismissableManager {@code null} for no restrictions.
          */
-        public void setDismissableManager(DismissableManager dismissableManager)
+        public void setDismissableManager(IDismissableManager dismissableManager)
         {
             if (mSwipeUndoTouchListener == null)
             {
@@ -109,13 +110,13 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo
         /**
          * Sets the {@link UndoCallback} to use.
          */
-        public void setUndoCallback(UndoCallback undoCallback)
+        public void setUndoCallback(IUndoCallback undoCallback)
         {
             mUndoCallback = undoCallback;
         }
 
         //@NonNull
-        public UndoCallback getUndoCallback()
+        public IUndoCallback getUndoCallback()
         {
             return mUndoCallback;
         }

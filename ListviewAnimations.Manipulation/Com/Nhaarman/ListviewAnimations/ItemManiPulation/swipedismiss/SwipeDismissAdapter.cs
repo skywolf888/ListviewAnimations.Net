@@ -37,7 +37,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
     {
 
         //@NonNull
-        private OnDismissCallback mOnDismissCallback;
+        private IOnDismissCallback mOnDismissCallback;
 
         //@Nullable
         private SwipeDismissTouchListener mDismissTouchListener;
@@ -58,7 +58,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
          * @param baseAdapter       the {@link android.widget.BaseAdapter to use}
          * @param onDismissCallback the {@link OnDismissCallback} to be notified of dismissed items.
          */
-        public SwipeDismissAdapter(BaseAdapter baseAdapter, OnDismissCallback onDismissCallback)
+        public SwipeDismissAdapter(BaseAdapter baseAdapter, IOnDismissCallback onDismissCallback)
             : base(baseAdapter)
         {
             //    super(baseAdapter);
@@ -66,14 +66,13 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
         }
 
         //@Override
-        public override void setListViewWrapper(ListViewWrapper listViewWrapper)
+        public override void setListViewWrapper(IListViewWrapper listViewWrapper)
         {
             base.setListViewWrapper(listViewWrapper);
             if (getDecoratedBaseAdapter() is ArrayAdapter)
             {
                  
-                //((ArrayAdapter)getDecoratedBaseAdapter()).propagateNotifyDataSetChanged(this);
-                throw new NotImplementedException();
+                ((Com.Nhaarman.ListviewAnimations.ArrayAdapter<object>)getDecoratedBaseAdapter()).propagateNotifyDataSetChanged(this);                 
                 
             }
             mDismissTouchListener = new SwipeDismissTouchListener(listViewWrapper, mOnDismissCallback);
@@ -93,7 +92,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss
          *
          * @param dismissableManager {@code null} for no restrictions.
          */
-        public void setDismissableManager(DismissableManager dismissableManager)
+        public void setDismissableManager(IDismissableManager dismissableManager)
         {
             if (mDismissTouchListener == null)
             {

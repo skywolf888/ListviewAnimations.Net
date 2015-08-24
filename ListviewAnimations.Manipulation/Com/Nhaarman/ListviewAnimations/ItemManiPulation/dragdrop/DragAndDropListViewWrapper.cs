@@ -7,7 +7,7 @@ using Com.Nhaarman.ListviewAnimations.Util;
 //import com.nhaarman.listviewanimations.util.ListViewWrapper;
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
 {
-    public interface DragAndDropListViewWrapper : ListViewWrapper
+    public interface DragAndDropListViewWrapper : IListViewWrapper
     {
 
         void setOnScrollListener(AbsListView.IOnScrollListener onScrollListener);

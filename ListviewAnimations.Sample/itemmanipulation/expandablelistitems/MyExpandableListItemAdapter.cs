@@ -80,7 +80,7 @@ public class MyExpandableListItemAdapter : ExpandableListItemAdapter<int> {
         }
 
         int imageResId;
-        switch ((int)GetItem(position) % 5) {
+        switch ((int)GetItem2(position) % 5) {
             case 0:
                 imageResId = Resource.Drawable.img_nature1;
                 break;

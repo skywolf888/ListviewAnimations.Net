@@ -34,6 +34,7 @@ using Android.Animation;
 using Android.Content;
 using Android.Views;
 using Android.Widget;
+
 namespace Com.Nhaarman.ListviewAnimations.Appearance
 {
     public abstract class ResourceAnimationAdapter : AnimationAdapter

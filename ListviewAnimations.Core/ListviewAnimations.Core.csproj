@@ -57,10 +57,10 @@
     <Compile Include="Com\Nhaarman\ListviewAnimations\Util\AbsListViewWrapper.cs" />
     <Compile Include="Com\Nhaarman\ListviewAnimations\Util\AdapterViewUtil.cs" />
     <Compile Include="Com\Nhaarman\ListviewAnimations\Util\AnimatorUtil.cs" />
-    <Compile Include="Com\Nhaarman\ListviewAnimations\Util\Insertable.cs" />
-    <Compile Include="Com\Nhaarman\ListviewAnimations\Util\ListViewWrapper.cs" />
-    <Compile Include="Com\Nhaarman\ListviewAnimations\Util\ListViewWrapperSetter.cs" />
-    <Compile Include="Com\Nhaarman\ListviewAnimations\Util\Swappable.cs" />
+    <Compile Include="Com\Nhaarman\ListviewAnimations\Util\IInsertable.cs" />
+    <Compile Include="Com\Nhaarman\ListviewAnimations\Util\IListViewWrapper.cs" />
+    <Compile Include="Com\Nhaarman\ListviewAnimations\Util\IListViewWrapperSetter.cs" />
+    <Compile Include="Com\Nhaarman\ListviewAnimations\Util\ISwappable.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
