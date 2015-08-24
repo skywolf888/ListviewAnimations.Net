@@ -1,5 +1,5 @@
 # ListviewAnimations.Net
  ListviewAnimations for Mono Version
 
- AndroidÏîÄ¿ https://github.com/nhaarman/ListViewAnimations
+ Androidé¡¹ç›® https://github.com/nhaarman/ListViewAnimations
  
