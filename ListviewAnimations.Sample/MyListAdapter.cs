@@ -29,13 +29,15 @@
 using Android.Content;
 using Android.Views;
 using Android.Widget;
+using com.refractored.components.stickylistheaders;
 using Com.Nhaarman.ListviewAnimations;
+using Com.Nhaarman.ListviewAnimations.ItemManiPulation.swipedismiss.undo;
 //import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 //StickyListHeadersAdapter
 //using Android.Widget;
 namespace ListviewAnimations.Sample
 {
-    public class MyListAdapter : Com.Nhaarman.ListviewAnimations.ArrayAdapter<string>//, UndoAdapter
+    public class MyListAdapter : Com.Nhaarman.ListviewAnimations.ArrayAdapter<string>, IUndoAdapter, IStickyListHeadersAdapter
     {
 
         private Context mContext;
@@ -97,7 +99,7 @@ namespace ListviewAnimations.Sample
         }
 
         //@Override
-        public View getHeaderView(int position, View convertView, ViewGroup parent)
+        public View GetHeaderView(int position, View convertView, ViewGroup parent)
         {
             TextView view = (TextView)convertView;
             if (view == null)
@@ -105,13 +107,13 @@ namespace ListviewAnimations.Sample
                 view = (TextView)LayoutInflater.From(mContext).Inflate(Resource.Layout.list_header, parent, false);
             }
 
-            view.Text=mContext.GetString(Resource.String.header, getHeaderId(position));
+            view.Text=mContext.GetString(Resource.String.header, GetHeaderId(position));
 
             return view;
         }
 
         //@Override
-        public long getHeaderId(int position)
+        public long GetHeaderId(int position)
         {
             return position / 10;
         }

@@ -77,7 +77,7 @@ namespace ListviewAnimations.Sample
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            BindService(new Intent("com.android.vending.billing.InAppBillingService.BIND"), mServiceConn, Bind.AutoCreate);
+            //BindService(new Intent("com.android.vending.billing.InAppBillingService.BIND"), mServiceConn, Bind.AutoCreate);
 
             FrameLayout flgv = FindViewById<FrameLayout>(Resource.Id.GridViewExample);
             flgv.Click += delegate {
@@ -98,6 +98,16 @@ namespace ListviewAnimations.Sample
                 Intent intent = new Intent(this, typeof(ItemManipulationsExamplesActivity));
                 StartActivity(intent);
             };
+
+
+            FrameLayout flslh = FindViewById<FrameLayout>(Resource.Id.ListViewSLH);
+            flslh.Click += delegate
+            {
+                Intent intent = new Intent(this, typeof(StickyListHeadersActivity));
+                StartActivity(intent);
+            };
+
+            
 
         }
 

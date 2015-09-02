@@ -122,7 +122,7 @@
     <AndroidResource Include="Resources\layout\activity_googlecards.xml" />
     <AndroidResource Include="Resources\layout\activity_googlecards_card.xml" />
     <AndroidResource Include="Resources\layout\activity_gridview.xml" />
-    <AndroidResource Include="Resources\layout\activity_main.xaml">
+    <AndroidResource Include="Resources\layout\activity_main.axml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </AndroidResource>
@@ -140,13 +140,17 @@
     <AndroidResource Include="Resources\values\dimens.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values-v19\dimens.xml" />
-    <Content Include="StickyListHeadersActivity.java" />
+    <Compile Include="StickyListHeadersActivity.cs" />
     <Compile Include="util\BitmapCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-ldpi\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\XamDroid.StickyListHeaders\Library\XamDroid.StickyListHeaders\XamDroid.StickyListHeaders.csproj">
+      <Project>{362ba929-486c-4d31-80b3-346cef3dfd90}</Project>
+      <Name>XamDroid.StickyListHeaders</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ListviewAnimations.Core\ListviewAnimations.Core.csproj">
       <Project>{1cd53e9c-2472-4bac-8d16-3dd6ca3aede2}</Project>
       <Name>ListviewAnimations.Core</Name>
@@ -154,6 +158,10 @@
     <ProjectReference Include="..\ListviewAnimations.Manipulation\ListviewAnimations.Manipulation.csproj">
       <Project>{5178376d-c7b3-4fd5-bdc4-6e4847ad63c0}</Project>
       <Name>ListviewAnimations.Manipulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ListViewAnimations.SLH\ListViewAnimations.SLH.csproj">
+      <Project>{ff584d60-10c5-410f-adc9-998f6547a4cb}</Project>
+      <Name>ListViewAnimations.SLH</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

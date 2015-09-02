@@ -26,10 +26,14 @@ namespace ListviewAnimations.Sample
 		
 		public static void UpdateIdValues()
 		{
+			global::com.refractored.components.stickylistheaders.Resource.String.ApplicationName = global::ListviewAnimations.Sample.Resource.String.ApplicationName;
+			global::com.refractored.components.stickylistheaders.Resource.String.Hello = global::ListviewAnimations.Sample.Resource.String.Hello;
 			global::ListviewAnimations.Core.Resource.String.ApplicationName = global::ListviewAnimations.Sample.Resource.String.ApplicationName;
 			global::ListviewAnimations.Core.Resource.String.Hello = global::ListviewAnimations.Sample.Resource.String.Hello;
 			global::ListviewAnimations.Manipulation.Resource.String.ApplicationName = global::ListviewAnimations.Sample.Resource.String.ApplicationName;
 			global::ListviewAnimations.Manipulation.Resource.String.Hello = global::ListviewAnimations.Sample.Resource.String.Hello;
+			global::ListViewAnimations.SLH.Resource.String.ApplicationName = global::ListviewAnimations.Sample.Resource.String.ApplicationName;
+			global::ListViewAnimations.SLH.Resource.String.Hello = global::ListviewAnimations.Sample.Resource.String.Hello;
 		}
 		
 		public partial class Array
@@ -205,6 +209,9 @@ namespace ListviewAnimations.Sample
 			// aapt resource value: 0x7f0a0009
 			public const int ItemManipulation = 2131361801;
 			
+			// aapt resource value: 0x7f0a000c
+			public const int ListViewSLH = 2131361804;
+			
 			// aapt resource value: 0x7f0a0000
 			public const int activity_dynamiclistview_listview = 2131361792;
 			
@@ -226,44 +233,44 @@ namespace ListviewAnimations.Sample
 			// aapt resource value: 0x7f0a0008
 			public const int activity_gridview_gv = 2131361800;
 			
-			// aapt resource value: 0x7f0a000c
-			public const int activity_mylist_listview = 2131361804;
-			
 			// aapt resource value: 0x7f0a000d
-			public const int activity_stickylistheaders_listview = 2131361805;
+			public const int activity_mylist_listview = 2131361805;
 			
 			// aapt resource value: 0x7f0a000e
-			public const int list_row_draganddrop_textview = 2131361806;
+			public const int activity_stickylistheaders_listview = 2131361806;
 			
 			// aapt resource value: 0x7f0a000f
-			public const int list_row_draganddrop_touchview = 2131361807;
-			
-			// aapt resource value: 0x7f0a0012
-			public const int menu_expandable_limit = 2131361810;
-			
-			// aapt resource value: 0x7f0a0014
-			public const int menu_main_beer = 2131361812;
-			
-			// aapt resource value: 0x7f0a0015
-			public const int menu_main_beer2 = 2131361813;
-			
-			// aapt resource value: 0x7f0a0016
-			public const int menu_main_beer3 = 2131361814;
-			
-			// aapt resource value: 0x7f0a0017
-			public const int menu_main_beer4 = 2131361815;
-			
-			// aapt resource value: 0x7f0a0013
-			public const int menu_main_donate = 2131361811;
-			
-			// aapt resource value: 0x7f0a0018
-			public const int menu_main_github = 2131361816;
+			public const int list_row_draganddrop_textview = 2131361807;
 			
 			// aapt resource value: 0x7f0a0010
-			public const int undo_row_texttv = 2131361808;
+			public const int list_row_draganddrop_touchview = 2131361808;
+			
+			// aapt resource value: 0x7f0a0013
+			public const int menu_expandable_limit = 2131361811;
+			
+			// aapt resource value: 0x7f0a0015
+			public const int menu_main_beer = 2131361813;
+			
+			// aapt resource value: 0x7f0a0016
+			public const int menu_main_beer2 = 2131361814;
+			
+			// aapt resource value: 0x7f0a0017
+			public const int menu_main_beer3 = 2131361815;
+			
+			// aapt resource value: 0x7f0a0018
+			public const int menu_main_beer4 = 2131361816;
+			
+			// aapt resource value: 0x7f0a0014
+			public const int menu_main_donate = 2131361812;
+			
+			// aapt resource value: 0x7f0a0019
+			public const int menu_main_github = 2131361817;
 			
 			// aapt resource value: 0x7f0a0011
-			public const int undo_row_undobutton = 2131361809;
+			public const int undo_row_texttv = 2131361809;
+			
+			// aapt resource value: 0x7f0a0012
+			public const int undo_row_undobutton = 2131361810;
 			
 			static Id()
 			{
