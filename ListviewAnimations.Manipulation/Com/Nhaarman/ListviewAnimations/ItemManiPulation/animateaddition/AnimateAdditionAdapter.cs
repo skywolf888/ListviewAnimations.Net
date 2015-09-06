@@ -112,7 +112,7 @@ namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.Animateaddition
          */
         //@Override
         //@Deprecated
-        public void setAbsListView(AbsListView absListView)
+        public new void setAbsListView(AbsListView absListView)
         {
             if (absListView is ListView)
             {

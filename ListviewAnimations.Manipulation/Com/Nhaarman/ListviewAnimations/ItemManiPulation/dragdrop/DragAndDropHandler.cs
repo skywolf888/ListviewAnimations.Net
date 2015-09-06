@@ -26,6 +26,7 @@
 //import com.nhaarman.listviewanimations.util.Swappable;
 
 using Android.Animation;
+using Android.Annotation;
 using Android.Content.Res;
 using Android.Graphics;
 using Android.OS;
@@ -38,12 +39,13 @@ using Android.Views;
  * <p/>
  * Users of this class must call {@link #onTouchEvent(android.view.MotionEvent)} and {@link #dispatchDraw(android.graphics.Canvas)} on the right moments.
  */
-//@TargetApi(14)
+
 using Android.Widget;
 using Com.Nhaarman.ListviewAnimations.Util;
 using System;
 namespace Com.Nhaarman.ListviewAnimations.ItemManiPulation.dragdrop
 {
+    [TargetApi(Value=14)]
     public class DragAndDropHandler : ITouchEventHandler
     {
 

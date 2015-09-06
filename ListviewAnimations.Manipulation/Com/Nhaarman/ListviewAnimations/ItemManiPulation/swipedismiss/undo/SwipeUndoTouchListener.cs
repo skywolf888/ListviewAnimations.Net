@@ -226,7 +226,7 @@ public class SwipeUndoTouchListener : SwipeDismissTouchListener {
     }
 
     //@Override
-    protected   void directDismiss(  int position) {
+    protected  new void directDismiss(  int position) {
         mDismissedPositions.Add(position);
         finalizeDismiss();
     }
